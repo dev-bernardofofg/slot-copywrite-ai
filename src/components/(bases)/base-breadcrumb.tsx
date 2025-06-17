@@ -18,14 +18,14 @@ export const BaseBreadcrumb = () => {
     switch (path) {
       case "dashboard":
         return "Dashboard";
-      case "clinic-form":
-        return "Cadastro de Clínica";
-      case "plains":
-        return "Planos";
-      case "doctors":
-        return "Médicos";
-      case "patients":
-        return "Pacientes";
+      case "chat":
+        return "Chat";
+      case "conversations":
+        return "Conversations";
+      case "templates":
+        return "Templates";
+      case "history":
+        return "History";
       default:
         return path;
     }
@@ -37,9 +37,9 @@ export const BaseBreadcrumb = () => {
         <BreadcrumbItem>
           <BreadcrumbLink href="/dashboard">Menu Principal</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator className="text-blue-700" />
+        <BreadcrumbSeparator className="text-primary" />
         <BreadcrumbItem>
-          <BreadcrumbLink href="/components" className="text-blue-700">
+          <BreadcrumbLink href="/components" className="text-primary">
             {translate(pathnames[0])}
           </BreadcrumbLink>
         </BreadcrumbItem>

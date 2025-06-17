@@ -1,10 +1,4 @@
-import {
-  CalendarDays,
-  Gem,
-  LayoutDashboard,
-  Stethoscope,
-  UserRound,
-} from "lucide-react";
+import { Brain } from "lucide-react";
 
 import {
   Sidebar,
@@ -13,60 +7,30 @@ import {
   SidebarHeader,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
-import Image from "next/image";
 import Link from "next/link";
+import { menuPrincipal } from "./sidebar-menu";
 import { SidebarUser } from "./sidebar-user";
 import { SidebarSection } from "./siderbar-section";
-
-const menuPrincipal = [
-  {
-    title: "Dashboard",
-    url: "/dashboard",
-    icon: LayoutDashboard,
-  },
-  {
-    title: "Agendamentos",
-    url: "/appointments",
-    icon: CalendarDays,
-  },
-  {
-    title: "Médicos",
-    url: "/doctors",
-    icon: Stethoscope,
-  },
-  {
-    title: "Pacientes",
-    url: "/patients",
-    icon: UserRound,
-  },
-];
-
-const others = [
-  {
-    title: "Planos",
-    url: "/plains",
-    icon: Gem,
-  },
-];
 
 export const AppSidebar = () => {
   return (
     <Sidebar>
       <SidebarHeader>
-        <Link href="/dashboard" className="p-4">
-          <Image
-            src="/brand-logo.svg"
-            alt="logo doutor agenda"
-            width={136}
-            height={28}
-          />
+        <Link href="/dashboard" className="px-4 py-2">
+          <div className="flex items-center  space-x-3">
+            <div className="p-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg shadow-blue-500/25">
+              <Brain className="h-6 w-6 text-white" />
+            </div>
+            <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              CopyAI
+            </h1>
+          </div>
         </Link>
       </SidebarHeader>
       <SidebarSeparator />
 
       <SidebarContent>
         <SidebarSection title="Menu principal" items={menuPrincipal} />
-        <SidebarSection title="Outros" items={others} />
       </SidebarContent>
       <SidebarSeparator />
       <SidebarFooter>

@@ -1,3 +1,4 @@
+import { Providers } from "@/providers";
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
 import "./globals.css";
@@ -19,8 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${syneFont.className} antialiased`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${syneFont.className} antialiased`}
+        suppressHydrationWarning
+      >
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
