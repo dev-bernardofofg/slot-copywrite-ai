@@ -1,4 +1,5 @@
 import { Providers } from "@/providers";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
 import "./globals.css";
@@ -25,7 +26,10 @@ export default function RootLayout({
         className={`${syneFont.className} antialiased`}
         suppressHydrationWarning
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <SpeedInsights />
+        </Providers>
       </body>
     </html>
   );
