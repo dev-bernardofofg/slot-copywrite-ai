@@ -12,7 +12,7 @@ import { usePathname } from "next/navigation";
 export const BaseBreadcrumb = () => {
   const pathname = usePathname();
 
-  const pathnames = pathname.split("/").filter((item) => item);
+  const pathnames = pathname?.split("/").filter((item) => item);
 
   const translate = (path: string) => {
     switch (path) {
@@ -40,7 +40,7 @@ export const BaseBreadcrumb = () => {
         <BreadcrumbSeparator className="text-primary" />
         <BreadcrumbItem>
           <BreadcrumbLink href="/components" className="text-primary">
-            {translate(pathnames[0])}
+            {translate(pathnames?.[0] ?? "")}
           </BreadcrumbLink>
         </BreadcrumbItem>
       </BreadcrumbList>
